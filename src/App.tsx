@@ -10,7 +10,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div >
         <Routes>
           <Route path="/" element={<CameraTuner />} />
           <Route path="/field" element={<Field />} />
