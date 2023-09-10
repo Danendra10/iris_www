@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Ball from "./pages/Ball";
+import CameraTuner from "./pages/CameraTuner";
+import Field from "./pages/Field";
+import Line from "./pages/Line";
 
-function App() {
+import { Route, Routes } from "react-router-dom";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<CameraTuner />} />
+          <Route path="/field" element={<Field />} />
+          <Route path="/ball" element={<Ball />} />
+          <Route path="/line" element={<Line />} />
+        </Routes>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
